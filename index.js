@@ -2,7 +2,6 @@
 
 let zSpacing = -1000;
 let lastPosition = zSpacing / 5;
-// try querySelectorAll()
 let framesElements = document.getElementsByClassName('frame');
 let framesArr = Array.from(framesElements);
 let zValues = [];
@@ -28,3 +27,23 @@ window.onscroll = () => {
 };
 
 window.scrollTo(0, 1);
+
+// Audio
+const soundBtn = document.querySelector('.footer__soundbtn');
+const audioSource = document.querySelector('.footer__audio');
+
+soundBtn.addEventListener('click', () => {
+  soundBtn.classList.toggle('footer__soundbtn--paused');
+
+  audioSource.paused ? audioSource.play() : audioSource.pause();
+});
+
+window.onfocus = () => {
+  soundBtn.classList.contains('footer__soundbtn--paused')
+    ? audioSource.pause()
+    : audioSource.play();
+};
+
+window.onblur = () => {
+  audioSource.pause();
+};

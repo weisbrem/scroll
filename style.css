@@ -15,18 +15,40 @@
 }
 
 :root {
-  --index: calc(1vw + 1 vh);
+  --index: calc(1vw + 1vh);
   --gutter: 30px;
   --side-small: 26;
   --side-large: 36;
   --depth: 4000px;
 
-  --white: #ffffff;
   --main-bg-color: #000000;
   --main-fs: calc(var(--index) * 0.8);
   --main-lh: 1.75;
 
+  --white: #ffffff;
+  --frame-bg: rgba(0, 0, 0, 0.8);
   --transition: 0.75s cubic-bezier(0.075, 05 0, 1);
+  --media-small-side: calc(var(--index) * var(--side-small));
+  --media-large-side: calc(var(--index) * var(--side-large));
+  --media-pos-left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  --media-pos-right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  --video-pos-left: calc(var(--side-large) / 2 * var(--index) + var(--gutter));
+  --video-pos-right: calc(var(--side-large) / 2 * var(--index) + var(--gutter));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  width: min-content;
+
+  line-height: 1;
+  font-weight: 100;
+  text-transform: uppercase;
+
+  margin: 0;
 }
 
 .body {
@@ -72,4 +94,80 @@
   transition: var(--transition), opacity 0.75s ease;
   will-change: transform;
   transform-style: preserve-3d;
+}
+
+.frame--bg {
+  background-color: var(--frame-bg);
+}
+
+.frame__title {
+  font-size: calc(var(--index) * 3);
+}
+
+.frame__title--main {
+  text-align: center;
+}
+
+.frame__media {
+  position: relative;
+  width: var(--media-small-side);
+  height: var(--media-large-side);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.frame__media--left {
+  right: var(--media-pos-right);
+}
+
+.frame__media--right {
+  left: var(--media-pos-left);
+}
+
+.frame__content > video {
+  width: var(--media-large-side);
+  height: var(--media-small-side-side);
+}
+
+.frame__video--left {
+  left: var(--video-pos-left);
+}
+
+.frame__video--right {
+  right: var(--video-pos-right);
+}
+
+.frame__text--right > * {
+  position: relative;
+  left: 18vw;
+}
+
+.frame__text--left > * {
+  position: relative;
+  right: 18vw;
+}
+
+.frame__text {
+  max-width: 30vw;
+}
+
+.footer__soundbtn {
+  position: fixed;
+
+  bottom: 5vh;
+  right: 5vw;
+  width: 24px;
+
+  cursor: pointer;
+
+  transform: 0.25s ease;
+}
+
+.footer__soundbtn--paused {
+  opacity: 0.25;
+}
+
+.footer__audio {
 }
