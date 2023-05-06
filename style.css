@@ -19,7 +19,7 @@
   --gutter: 30px;
   --side-small: 26;
   --side-large: 36;
-  --depth: 3000px;
+  --depth: 4000px;
 
   --main-bg-color: #000000;
   --main-fs: calc(var(--index) * 0.8);
