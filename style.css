@@ -19,7 +19,7 @@
   --gutter: 30px;
   --side-small: 26;
   --side-large: 36;
-  --depth: 4000px;
+  --depth: 3000px;
 
   --main-bg-color: #000000;
   --main-fs: calc(var(--index) * 0.8);
@@ -30,10 +30,8 @@
   --transition: 0.75s cubic-bezier(0.075, 05 0, 1);
   --media-small-side: calc(var(--index) * var(--side-small));
   --media-large-side: calc(var(--index) * var(--side-large));
-  --media-pos-left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
-  --media-pos-right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
-  --video-pos-left: calc(var(--side-large) / 2 * var(--index) + var(--gutter));
-  --video-pos-right: calc(var(--side-large) / 2 * var(--index) + var(--gutter));
+  --media-pos: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  --video-pos: calc(var(--side-large) / 2 * var(--index) + var(--gutter));
 }
 
 h1,
@@ -119,11 +117,11 @@ h6 {
 }
 
 .frame__media--left {
-  right: var(--media-pos-right);
+  right: var(--media-pos);
 }
 
 .frame__media--right {
-  left: var(--media-pos-left);
+  left: var(--media-pos);
 }
 
 .frame__content > video {
@@ -132,11 +130,11 @@ h6 {
 }
 
 .frame__video--left {
-  left: var(--video-pos-left);
+  left: var(--video-pos);
 }
 
 .frame__video--right {
-  right: var(--video-pos-right);
+  right: var(--video-pos);
 }
 
 .frame__text--right > * {
